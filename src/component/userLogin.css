@@ -1,0 +1,73 @@
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: sans-serif;
+} 
+input, button {
+    appearance: none;
+    background:none;
+    border:none;
+    outline:none
+}
+.UserLogin{
+    background-image: linear-gradient( to bottom right, yellow, #fe4880);
+    width:25%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px auto;
+    padding:7px
+}
+.UserLogin>form{
+    width:100%;
+    background:white;
+    height: 100%;
+    display: block;
+    position: relative;
+    padding:25px
+}
+.UserLogin>form>div>label{
+    margin-bottom:2px;
+    transition: 0.4s;
+    width: 100%;
+}
+.UserLogin>form>div  >label:focus-within{
+   color:#FE4880
+}
+.UserLogin>form>div>label>h2{
+    color:#888;
+    font-size:18px;
+    font-weight:500;
+    margin-bottom:5px
+}
+.UserLogin>form>div>label>input {
+    display:block;
+    width:100%;
+    padding: 10px 15px;
+    background:#F8F8F8;
+    border-radius: 8px;
+    transition: 0.4s;
+}
+.UserLogin>form>div>label>input:focus {
+ box-shadow: 0px 0px 3px rgba(0,0,0,0.2);
+}
+input[type="submit"]{
+   display:inline-block;
+   padding:10px 15px;
+   border-radius:8px;
+   background-image:linear-gradient(to right, #FFCE00 50%,#FE4880);
+   background-position: 0%;
+   background-size:200%;
+   margin: 10px 0 0 3px;
+   color:#888
+}
+input[type="submit"]:hover {
+    background-position: 100%;
+}
+.error{
+    color:red;
+    font-size:20px;
+    
+}
