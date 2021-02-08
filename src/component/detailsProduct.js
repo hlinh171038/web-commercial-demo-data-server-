@@ -50,7 +50,8 @@ export default class DetailsProduct extends Component {
                         <Button onClick={this.descreseNumber} color="primary" disabled ={this.state.number ===1 ? true:false}>-</Button>
                     </div>
                     <CartContext.Consumer>
-                        {({addToCart}) => <Button color="primary" className="ml-3 mt-3" onClick={()=>{addToCart({...this.state.product,count:this.state.number})}}>Add to cart</Button>}
+                        {({addToCart}) => <Button color="primary" className="ml-3 mt-3" 
+                        onClick={()=>{addToCart({...this.state.product,count:this.state.number})}}>Add to cart</Button>}
                     </CartContext.Consumer>    
                 </div>
             </div>

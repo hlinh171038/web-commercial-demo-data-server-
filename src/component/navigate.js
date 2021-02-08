@@ -1,4 +1,7 @@
 import React, {Component} from 'react'
+import logo from '../logo.png'
+import { MdAddShoppingCart } from "react-icons/md";
+import {ButtonContainer} from './Button'
 import {
     Collapse,
     Navbar,
@@ -28,26 +31,27 @@ import {
   import User from './user'
   import Collapses from './collapses'
   import DetailsProduct from './detailsProduct'
+  import Default from './default'
 
 class Navigate extends Component {
  render(){
      return(
     <div className="Navigate">
-       <Router>
-           
-        <Navbar color="light" light expand="md">
-            <NavbarBrand >Web commercial</NavbarBrand>
+       <Router>    
+        <Navbar className="text-primary"  expand="md" style={{background:"#f8f9fa"}}>
+            <NavbarBrand ><img src={logo} width="50px" heigth="50px"></img></NavbarBrand>
             <NavbarToggler />
             <Collapse navbar>
                 <Nav className="mr-auto" navbar>
-                <NavItem >
+                <NavItem className="ml-5 mr-5" style={{"font-size": "1.4em",}}>
                     <NavLink ><Link style={{"text-decoration":"none"}}  to="/">Home</Link></NavLink>          
                 </NavItem>
-                <NavItem>
+                <NavItem style={{"font-size": "1.4em",}}>
                     <NavLink><Link style={{"text-decoration":"none"}} to="/product">Product</Link> </NavLink>
                 </NavItem>
-                <NavItem>     
-                    <NavLink>
+                <NavItem className="ml-5 mr-5">     
+                    <ButtonContainer>
+                        <MdAddShoppingCart/>
                         <CartContext.Consumer>
                             {({CartItem}) => <Link style={{"text-decoration":"none"}}  to="/cart">Cart
                                                 <Badge color="primary">{CartItem.reduce((accumulator, currentValue) =>{
@@ -55,7 +59,8 @@ class Navigate extends Component {
                                                 </Badge>
                                              </Link>}
                         </CartContext.Consumer>
-                    </NavLink>   
+                    
+                    </ButtonContainer>  
                 </NavItem>
                 </Nav>
                     <Collapses heading={'Coderx.tokio'} >
@@ -79,6 +84,9 @@ class Navigate extends Component {
             <Route exact path="/cart">
                 <Cart/>
             </Route>
+            <Route>
+                <Default/>
+            </Route>
             <Route exact path="/product/:masanpham" component={DetailsProduct}/>
              
         </Switch>
@@ -88,3 +96,6 @@ class Navigate extends Component {
  }
 }
 export default Navigate
+
+
+

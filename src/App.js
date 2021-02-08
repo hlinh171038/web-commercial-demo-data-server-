@@ -40,11 +40,12 @@ logout(){
    return (
     <CartProvider>
       <div className="App">
-        {(this.state.user.email !=="")?(
+      <Navigate user={this.state.user} logout={this.logout}/>
+        {/* {(this.state.user.email !=="")?(
           
             <Navigate user={this.state.user} logout={this.logout}/>
          
-        ):( <UserLogin login={this.login} error={this.state.error}/>)}
+        ):( <UserLogin login={this.login} error={this.state.error}/>)} */}
       </div>
     </CartProvider>
    )
